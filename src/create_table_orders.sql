@@ -4,7 +4,7 @@ create table orders(
     customer_id  int       not null,
     product_name varchar   not null,
     amount       money,
-    foreign key (id) references customers (id)
+    foreign key (customer_id) references customers (id)
 );
 
 insert into orders(date, customer_id, product_name, amount)
