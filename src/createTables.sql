@@ -1,23 +1,13 @@
-create table city(
-    cityId serial  not null,
-    name   varchar not null primary key
-);
-
 create table persons(
-    personID     serial,
-    name         varchar not null,
-    surname      varchar not null,
-    age          int     not null,
-    phone_number varchar not null,
-    cityID       int,
+    name           varchar not null,
+    surname        varchar not null,
+    age            int     not null,
+    phone_number   varchar not null,
+    city_of_living varchar,
     primary key (name, surname, age)
 );
 
-insert into persons (name, surname, age, phone_number, cityID)
-values ('alex', 'suranov', 27, '985-191', 1),
-       ('alina', 'petrova', 25, '955-515', 1),
-       ('daniil', 'verkhov', 31, '915-151', 2);
-
-insert into city (name)
-values ('moscow'),
-       ('st-pterburg');
+insert into persons
+values ('alex', 'suranov', 27, '985-191', 'MOSCOW'),
+       ('alina', 'petrova', 33, '955-515', 'ST-PETERBURG'),
+       ('daniil', 'verkhov', 31, '915-151', 'MOSCOW');
